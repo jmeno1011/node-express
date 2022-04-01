@@ -2,9 +2,13 @@ const express = require("express");
 const app = express();
 const port = 8888;
 
+app.get('/',(req, res)=>{
+  res.status(200).send("Get data has successfully hello World!");
+})
+
 app.get("/api", (req, res) => {
   try {
-    res.status(200).send("Get data has successfully hello World!")
+    res.status(200).send("here is api")
   } catch (error) {
     console.log("error :: ", error);
     return res.status(500).send("Server error");
