@@ -4,10 +4,7 @@ const port = 8888;
 
 app.get("/api", (req, res) => {
   try {
-    res.json({
-      status: 200,
-      message: "Get data has successfully hello World!",
-    });
+    res.status(200).send("Get data has successfully hello World!")
   } catch (error) {
     console.log("error :: ", error);
     return res.status(500).send("Server error");
