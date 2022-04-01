@@ -3,7 +3,15 @@ const app = express();
 const port = 8888;
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  try {
+    res.json({
+      status: 200,
+      message: "Get data has successfully hello World!",
+    });
+  } catch (error) {
+    console.log("error :: ", error);
+    return res.status(500).send("Server error");
+  }
 });
 
 app.post("/", function (req, res) {
