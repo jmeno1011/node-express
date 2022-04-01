@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const port = 8888;
 
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   try {
     res.json({
       status: 200,
