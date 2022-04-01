@@ -15,6 +15,13 @@ app.get("/api", (req, res) => {
   }
 });
 
+app.get("/test-api",(req, res)=>{
+  res.json({
+    status:200,
+    message:"test-api-message"
+  })
+})
+
 app.post("/", function (req, res) {
   res.send("Got a POST request");
 });
