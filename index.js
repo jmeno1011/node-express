@@ -1,9 +1,25 @@
 const express = require("express");
-var cors = require("cors");
+const cors = require("cors");
 const app = express();
-const port = 8888;
+// ------------------------------------------ //
+// dependencies 추가 필요
+// const helmet = require('helmet');
+// const compression = require('compression');
+// const morgan = require('morgan');
+// const dotenv = require("dotenv");
+// const cookieParser = require("cookie-parser");
+// const session = require("express-session");
+// const bodyParser = require('body-parser');
+// ------------------------------------------ //
 
-// middle ware
+const port = 8888;
+// env setting
+// dotenv.config();
+
+// set security HTTP headers
+// app.use(helmet());
+
+// middleware
 app.use(cors());
 
 app.get("/", (req, res) => {
