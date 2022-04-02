@@ -3,7 +3,7 @@ const cors = require("cors");
 const app = express();
 // ------------------------------------------ //
 // dependencies 추가 필요
-// const helmet = require('helmet');
+const helmet = require("helmet");
 // const compression = require('compression');
 // const morgan = require('morgan');
 // const dotenv = require("dotenv");
@@ -17,7 +17,7 @@ const port = 8888;
 // dotenv.config();
 
 // set security HTTP headers
-// app.use(helmet());
+app.use(helmet());
 
 // middleware
 app.use(cors());
