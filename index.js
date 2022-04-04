@@ -4,8 +4,8 @@ const app = express();
 // ------------------------------------------ //
 // dependencies 추가 필요
 const helmet = require("helmet");
+const logger = require('morgan');
 // const compression = require('compression');
-// const morgan = require('morgan');
 // const dotenv = require("dotenv");
 // const cookieParser = require("cookie-parser");
 // const session = require("express-session");
@@ -18,11 +18,13 @@ const port = 8888;
 
 // set security HTTP headers
 app.use(helmet());
-
+// use morgan logger
+app.use(logger('dev'))
 // middleware
 app.use(cors());
 
 app.get("/", (req, res) => {
+  console.log(`${new Date()}:: connect / `);
   res.status(200).send("Get data has successfully hello World!");
 });
 
