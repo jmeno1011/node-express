@@ -28,6 +28,7 @@ app.get("/", (req, res) => {
 
 app.get("/api", (req, res) => {
   try {
+    console.log(`${new Date()}:: connect /api `);
     res.status(200).send("here is api");
   } catch (error) {
     console.log("error :: ", error);
@@ -36,6 +37,7 @@ app.get("/api", (req, res) => {
 });
 
 app.get("/test-api", (req, res) => {
+  console.log(`${new Date()}:: connect /test-api `);
   res.json({
     status: 200,
     message: "test-api-message",
